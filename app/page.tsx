@@ -2,13 +2,32 @@ import React from 'react';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-slate-100 text-slate-800 font-sans antialiased selection:bg-slate-200 p-4 md:p-8">
+    <div className="min-h-screen bg-slate-100 text-slate-800 font-sans antialiased selection:bg-slate-200 p-4 md:p-8 print:p-0 print:bg-white">
       
-      {/*전체 포트폴리오를 감싸는 컨테이너 (가로 슬라이드 감성의 와이드 카드 레이아웃) */}
-      <div className="max-w-6xl mx-auto space-y-12">
+      {/* 🖨️ 브라우저 인쇄 가이드라인 강제 주입 (가로 A4 단독 슬라이드 격리) */}
+      <style>{`
+        @media print {
+          body { background-color: #ffffff !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+          .print-slide {
+            width: 297mm !important;
+            height: 210mm !important;
+            padding: 20mm !important;
+            margin: 0 auto !important;
+            page-break-after: always !important;
+            break-after: page !important;
+            overflow: hidden !important;
+            border: none !important;
+            box-shadow: none !important;
+            border-radius: 0 !important;
+          }
+        }
+      `}</style>
+
+      {/* 전체 포트폴리오를 감싸는 컨테이너 */}
+      <div className="max-w-6xl mx-auto space-y-12 print:space-y-0">
         
         {/* PAGE 01: TITLE COVER */}
-        <section className="bg-white rounded-2xl p-12 shadow-sm border border-slate-200 min-h-[70vh] flex flex-col justify-center border-l-8 border-l-slate-900">
+        <section className="print-slide bg-white rounded-2xl p-12 shadow-sm border border-slate-200 min-h-[70vh] flex flex-col justify-center border-l-8 border-l-slate-900">
           <div className="space-y-6">
             <span className="text-sm font-bold tracking-widest text-slate-400 uppercase">Portfolio 2026</span>
             <h1 className="text-5xl md:text-6xl font-black text-slate-900 tracking-tight">김정민</h1>
@@ -24,7 +43,7 @@ export default function Home() {
         </section>
 
         {/* PAGE 02: ABOUT & SKILLS */}
-        <section className="bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-slate-200 space-y-8">
+        <section className="print-slide bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-slate-200 space-y-8 flex flex-col justify-center">
           <div className="border-b border-slate-200 pb-4">
             <h2 className="text-2xl font-bold text-slate-900">01. ABOUT (소개와 SW 역량)</h2>
           </div>
@@ -71,7 +90,7 @@ export default function Home() {
         </section>
 
         {/* PAGE 03: PROJECT 01 - AUTONOMOUS TAXI */}
-        <section className="bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-slate-200 space-y-6">
+        <section className="print-slide bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-slate-200 space-y-6 flex flex-col justify-center">
           <div className="border-b border-slate-200 pb-4 flex justify-between items-end">
             <h2 className="text-2xl font-bold text-slate-900">PROJECT 01. 자율주행 택시 서비스</h2>
             <span className="px-2.5 py-0.5 bg-slate-900 text-white text-xs font-bold rounded">제어 알고리즘</span>
@@ -99,7 +118,6 @@ export default function Home() {
                   </tr>
                 </tbody>
               </table>
-              {/* 이미지 컴포넌트 대체 레이아웃 1 */}
               <div className="grid grid-cols-2 gap-2">
                 <div className="space-y-2">
                   <div className="w-full h-28 bg-slate-50 border border-slate-200 rounded-lg overflow-hidden shadow-sm">
@@ -129,14 +147,14 @@ export default function Home() {
               </div>
               <div className="p-4 bg-slate-50 border-l-4 border-slate-900 text-xs md:text-sm text-slate-600 text-justify rounded-r">
                 <span className="font-bold block text-slate-900 mb-1">📝 프로젝트 회고 (Reflection)</span>
-                기계공학전공 수치 해석 지식을 소프트웨어 제어 로직에 성공적으로 매핑했습니다. 물리적 데이터 끊김과 하드웨어 노이즈 문제를 디지털 이중 필터링(LPF, Slew Rate Limit) 설계를 통해 상쇄 제어하며 예외 처리 시야를 크게 확장했습니다. 소프트웨어 아키텍처를 통해 하드웨어의 물리적 제약 요건을 최적화해 내는 융합 역량의 가치를 확신했습니다.
+                기계공학전공 수치 해석 지식을 소프트웨어 제어 로직에 성공적으로 매핑했습니다. 물리적 데이터 끊김และ 하드웨어 노이즈 문제를 디지털 이중 필터링(LPF, Slew Rate Limit) 설계를 통해 상쇄 제어하며 예외 처리 시야를 크게 확장했습니다. 소프트웨어 아키텍처를 통해 하드웨어의 물리적 제약 요건을 최적화해 내는 융합 역량의 가치를 확신했습니다.
               </div>
             </div>
           </div>
         </section>
 
         {/* PAGE 04: PROJECT 02 - WEB GAME */}
-        <section className="bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-slate-200 space-y-6">
+        <section className="print-slide bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-slate-200 space-y-6 flex flex-col justify-center">
           <div className="border-b border-slate-200 pb-4 flex justify-between items-end">
             <h2 className="text-2xl font-bold text-slate-900">PROJECT 02. 인터랙티브 웹 게임</h2>
             <span className="px-2.5 py-0.5 bg-blue-600 text-white text-xs font-bold rounded">SSAFY 우수상</span>
@@ -164,7 +182,6 @@ export default function Home() {
                   </tr>
                 </tbody>
               </table>
-              {/* 이미지 컴포넌트 대체 레이아웃 2 */}
               <div className="w-full h-64 bg-slate-50 border border-slate-200 rounded-lg overflow-hidden shadow-sm">
                   <img src="/images/Game_1.png" alt="" className="w-full h-full object-cover"/>
               </div>
@@ -191,7 +208,7 @@ export default function Home() {
         </section>
 
         {/* PAGE 05: PROJECT 03 - MONEY COMPASS */}
-        <section className="bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-slate-200 space-y-6">
+        <section className="print-slide bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-slate-200 space-y-6 flex flex-col justify-center">
           <div className="border-b border-slate-200 pb-4 flex justify-between items-end">
             <h2 className="text-2xl font-bold text-slate-900">PROJECT 03. Money Compass</h2>
             <span className="px-2.5 py-0.5 bg-emerald-600 text-white text-xs font-bold rounded">풀스택</span>
@@ -215,7 +232,6 @@ export default function Home() {
                   </tr>
                 </tbody>
               </table>
-              {/* 이미지 컴포넌트 대체 레이아웃 3 */}
               <div className="w-full h-28 bg-slate-50 border border-slate-200 rounded-lg overflow-hidden shadow-sm">
                   <img src="/images/MoneyCompass_1.png" alt="" className="w-full h-full object-cover"/>
               </div>
@@ -245,7 +261,7 @@ export default function Home() {
         </section>
 
         {/* PAGE 06: PROJECT 04 - MINIBOX */}
-        <section className="bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-slate-200 space-y-6">
+        <section className="print-slide bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-slate-200 space-y-6 flex flex-col justify-center">
           <div className="border-b border-slate-200 pb-4 flex justify-between items-end">
             <h2 className="text-2xl font-bold text-slate-900">PROJECT 04. MINIBOX</h2>
             <span className="px-2.5 py-0.5 bg-purple-700 text-white text-xs font-bold rounded">MVC 클론코딩</span>
@@ -269,7 +285,6 @@ export default function Home() {
                   </tr>
                 </tbody>
               </table>
-              {/* 이미지 컴포넌트 대체 레이아웃 4 */}
               <div className="w-full h-64 bg-slate-50 border border-slate-200 rounded-lg overflow-hidden shadow-sm">
                 <img src="/images/Minibox_1.png" alt="MINIBOX 메인 화면" className="w-full h-full object-cover"/>
               </div>
@@ -296,7 +311,7 @@ export default function Home() {
         </section>
 
         {/* PAGE 07: EDUCATION & CERTIFICATE */}
-        <section className="bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-slate-200 space-y-6">
+        <section className="print-slide bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-slate-200 space-y-6 flex flex-col justify-center">
           <div className="border-b border-slate-200 pb-4">
             <h2 className="text-2xl font-bold text-slate-900">02. EDUCATION &amp; CERTIFICATE (교육 및 자격)</h2>
           </div>
