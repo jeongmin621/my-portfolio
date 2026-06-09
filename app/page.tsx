@@ -49,7 +49,7 @@ export default function Home() {
           </div>
           <div className="grid md:grid-cols-12 gap-8">
             <div className="md:col-span-5 space-y-4">
-              <h3 className="text-lg font-bold text-slate-900 border-b border-slate-200 pb-1">나란 누구인가</h3>
+              <h3 className="text-lg font-bold text-slate-900 border-b border-slate-200 pb-1">저에 대해 소개합니다</h3>
               <div className="text-sm text-slate-600 space-y-4 leading-relaxed text-justify">
                 <p>
                   <strong className="text-slate-900">부딪히며 성취하는 마인드:</strong> 잘 못해도 일단 해보자는 자세로 개발에 임해왔습니다. 부족함을 솔직하게 인정하되 직접 구현하고 깨지며 배우는 방식을 통해 백엔드 인프라부터 프론트엔드 최적화까지 유기적인 웹 전 주기 흐름을 빠르게 습득했습니다.
