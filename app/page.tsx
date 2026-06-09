@@ -70,11 +70,11 @@ export default function Home() {
               <div className="space-y-2 text-sm">
                 {[
                   { name: 'JavaScript', bar: '■■■□□', desc: '언어 메커니즘 이해, 비동기 데이터 가공 및 최적화' },
-                  { name: 'Python', bar: '■■□□□', desc: '수치 정제 파이프라인 개발 및 데이터 가공 처리 가능' },
-                  { name: 'Java', bar: '■■□□□', desc: '객체 지향 원리 기반의 견고한 비즈니스 로직 설계' },
-                  { name: 'Spring / MyBatis', bar: '■■□□□', desc: '표준 MVC 아키텍처 수립 및 데이터 레이어 격리 분리' },
-                  { name: 'React / Vue.js', bar: '■■□□□', desc: '독립 컴포넌트 모듈화 설계 및 동적 UI 바인딩 구축' },
-                  { name: 'MySQL', bar: '■■□□□', desc: '관계형 DB 스키마 모델링 및 데이터 인프라 구축' },
+                  { name: 'Python', bar: '■■■□□', desc: '수치 정제 파이프라인 개발 및 데이터 가공 처리 가능' },
+                  { name: 'Java', bar: '■■■□□', desc: '객체 지향 원리 기반의 견고한 비즈니스 로직 설계' },
+                  { name: 'Spring / MyBatis', bar: '■■■□□', desc: '표준 MVC 아키텍처 수립 및 데이터 레이어 격리 분리' },
+                  { name: 'React / Vue.js', bar: '■■■□□', desc: '독립 컴포넌트 모듈화 설계 및 동적 UI 바인딩 구축' },
+                  { name: 'MySQL', bar: '■■■■□', desc: '관계형 DB 스키마 모델링 및 데이터 인프라 구축' },
                   { name: 'Zustand', bar: '■□□□□', desc: '전역 상태 제어 흐름 내재화 및 응용 고도화 단계' },
                   { name: 'ROS Noetic', bar: '■□□□□', desc: '융합 제어 매커니즘 구현을 위해 독학으로 도전한 스택' },
                 ].map((skill, idx) => (
@@ -331,11 +331,9 @@ export default function Home() {
               <div className="grid grid-cols-1 gap-2 text-xs md:text-sm text-slate-600">
                 {[
                   { name: '정보처리기사', desc: '필기 합격 완료 및 최종 실기 결과 합격자 발표 대기 중 (SW 이론 검증)' },
-                  { name: '산업안전기사', desc: '제조·생산 설비 안전 인프라 지식 및 공정 안전 시스템 가이드라인 확보' },
                   { name: '빅데이터관리사', desc: '대용량 로우 데이터 분석 및 통계 가공 정제 프로세스 역량 증명' },
-                  { name: '식스시그마 (Six Sigma)', desc: '제조 공정 불량률 최소화 마인드 기반 데이터 최적화 매커니즘 내재화' },
                   { name: 'ISO 9001 & 14001 내부심사원', desc: '품질 및 환경 경영 시스템 표준 규격 프로세스 진단 역량 확립' },
-                  { name: 'CATIA / AutoCAD 2급', desc: '3차원 기하학 형상 설계 및 공간 지각 기술, 도면 수치 제어 역량' },
+                  { name: 'AutoCAD 2급', desc: '3차원 기하학 형상 설계 및 공간 지각 기술, 도면 수치 제어 역량' },
                 ].map((cert, idx) => (
                   <div key={idx} className="flex justify-between border-b border-slate-100 pb-1">
                     <span className="font-semibold text-slate-900 w-44">{cert.name}</span>
